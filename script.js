@@ -1,4 +1,5 @@
 const container = document.querySelector('#container')
+let elements;
 let color = 'black'
 
 createGrid(20)
@@ -14,38 +15,53 @@ function createGrid(size) {
             container.appendChild(content)
         }
     }
+    elements = document.querySelectorAll(".box")
+    coloring();
 }
 
-const elements = document.querySelectorAll(".box")
-elements.forEach((element) => {
-    let opacity = 0.1;
-    element.addEventListener("mouseover", event => {
-        if(color === 'random') {
-            element.style.backgroundColor = random_color()
-        }
-        else if(color === 'grey') {
-            opacity += 0.1
-            element.style.backgroundColor = grey_color(opacity)
-        }
-        else {
-            element.style.backgroundColor = color
-        }
+function coloring() {
+    elements.forEach((element) => {
+        let opacity = 0.1;
+        element.addEventListener("mouseover", event => {
+            if(color === 'random') {
+                element.style.backgroundColor = random_color()
+            }
+            else if(color === 'grey') {
+                opacity += 0.1
+                element.style.backgroundColor = grey_color(opacity)
+            }
+            else {
+                element.style.backgroundColor = color
+            }
+        });
     });
+}
+
+const clearBtn = document.querySelector('#clear-btn')
+clearBtn.addEventListener('click', (e) => {
+    clear()
 });
 
-const clearBtn = document.querySelector("#clear-btn")
-clearBtn.addEventListener("click", event => {
-     elements.forEach((element) => {
-         element.style.backgroundColor = ''
-    });
-});
-
-const buttons = document.querySelectorAll('.color-btn');
+const buttons = document.querySelectorAll('.color-btn')
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
     color = button.id;
   });
 });
+
+const submitBtn = document.querySelector('#submit-btn')
+submitBtn.addEventListener('click', (e) => {
+  let scale = document.getElementById('scale').value
+  clear()
+  container.innerHTML = "";
+  createGrid(scale)
+});
+
+function clear() {
+     elements.forEach((element) => {
+         element.style.backgroundColor = ''
+    });
+}
 
 
 function random_color() {

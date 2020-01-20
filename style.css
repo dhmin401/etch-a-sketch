@@ -12,25 +12,46 @@ h1 {
     border: 1px solid black;
     width: 500px;
     height: 500px;
-    margin: 50px auto;
+    margin: 50px auto 30px auto;
+    box-shadow: 3px 3px 3px 3px black;
+    background: white;
 }
 
 .box {
     margin: 0;
     padding: 0;
-    border: 1px solid black;
     width: auto;
     height: auto;
 }
 
-#side {
+#side1, #side2 {
     text-align: center;
 }
 
 .btn, .color-btn {
-    font-size: 1.2em;
-    padding: 10px 0;
-    width: 150px;
+    font-size: 1em;
+    padding: 5px 0;
+    width: 100px;
     border-radius: 5px;
-    margin: 5px;
+    margin: 10px 0;
+}
+
+.txtbox {
+    font-size: 1em;
+    width: 105px;
+    border-radius: 5px;
+    margin: 0;
+    padding: 5px
+}
+
+#submit-btn {
+    margin-left: 5px;
+    background: #4cb69f;
+    border: none;
+}
+
+.color-btn, #clear-btn {
+    margin: 5px 5px 20px 5px;
+    background: #4cb69f;
+    border: none;
 }

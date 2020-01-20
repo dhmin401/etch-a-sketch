@@ -1,0 +1,36 @@
+body {
+    background: #f6f5f3;
+}
+
+h1 {
+    font: normal 3.5em 'Bangers', cursive;
+    text-align: center;
+}
+
+#container {
+    display: grid;
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+}
+
+.box {
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+}
+
+#side {
+    text-align: center;
+}
+
+.btn, .color-btn {
+    font-size: 1.2em;
+    padding: 10px 0;
+    width: 150px;
+    border-radius: 5px;
+    margin: 5px;
+}
